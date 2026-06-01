@@ -147,7 +147,7 @@ with st.sidebar:
 
     st.markdown("---")
     st.caption(
-        "Students work only in real-world units here. The hidden response uses coded units behind the scenes."
+        "Work only in real-world units here."
     )
 
 
@@ -156,9 +156,34 @@ with st.sidebar:
 # --------------------------------------------------
 
 st.title("Wearable PPG Sensor Optimization")
-st.write(
-    "You are optimizing a wearable optical heart-rate sensor under motion conditions. "
-    "Your goal is to maximize **PPG Signal Quality Score** using no more than **45 experiments**."
+
+st.markdown(
+    """
+    In this virtual design-of-experiments lab, you are optimizing a wearable
+    **photoplethysmography (PPG)** sensor. A PPG sensor estimates heart rate by
+    shining light into the skin and measuring small changes in reflected light
+    caused by blood volume changes.
+
+    Under motion conditions, the signal can become noisy. Your job is to choose
+    sensor settings that improve the **PPG Signal Quality Score** while working
+    within a fixed experimental budget.
+
+    You will control three factors:
+
+    - **LED Current (mA):** the electrical current driving the optical LED. Higher
+      current can increase the strength of the optical signal, but too much may
+      introduce saturation or unnecessary power use.
+    - **Strap Pressure (kPa):** how firmly the sensor is pressed against the skin.
+      Too little pressure can allow motion artifacts, while too much pressure may
+      reduce comfort or alter the local blood flow signal.
+    - **Filter Window Length (samples):** the number of recent samples used to
+      smooth the signal. A longer window can reduce noise, but may also make the
+      sensor slower to respond to real changes.
+
+    Your goal is to maximize **PPG Signal Quality Score** using no more than
+    **45 experiments**. The best settings are not obvious in advance, so use your
+    experiments thoughtfully.
+    """
 )
 
 info1, info2, info3, info4 = st.columns(4)
