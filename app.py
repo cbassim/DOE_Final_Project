@@ -106,7 +106,7 @@ with st.sidebar:
     st.header("Session")
     entered_id = st.text_input(
         "Student ID",
-        value=st.session_state["student_id"],
+        value=st.session_state["DOE ID: First Letter of Last Name and last 4 numbers of student_id"],
         help="Use the same ID every time so your hidden system stays consistent.",
     )
 
