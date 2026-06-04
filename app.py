@@ -105,9 +105,13 @@ _init_session()
 with st.sidebar:
     st.header("Session")
     entered_id = st.text_input(
-        "Student ID",
-        value=st.session_state["DOE ID: First Letter of Last Name and last 4 numbers of student_id"],
-        help="Use the same ID every time so your hidden system stays consistent.",
+        "DOE ID",
+        value=st.session_state["student_id"],
+        help=(
+            "Use the first letter of your last name followed by the last 4 digits "
+            "of your student ID, for example B1234. Use the same ID every time "
+            "so your hidden system stays consistent."
+        ),
     )
 
     col_start, col_reset = st.columns(2)
